@@ -1,0 +1,36 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug 32-bit Assembly Assignment",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/main_out",
+            "args": [],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Auto-Watch global array memory variables",
+                    "text": "set print elements 0",
+                    "ignoreFailures": true
+                }
+            ],
+            "customLaunchSetupCommands": [
+                {
+                    "text": "x/16xw $esp",
+                    "description": "Automatically dumps the top 16 words of Stack memory to the terminal on load",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}

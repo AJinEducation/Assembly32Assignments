@@ -1,0 +1,13 @@
+{
+    "name": "x86 Assembly Environment",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y nasm gcc gdb",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "github.copilot.enable": false,
+                "github.copilot.inlineSuggest.enable": false
+            }
+        }
+    }
+}
